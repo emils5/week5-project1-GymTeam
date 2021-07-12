@@ -20,6 +20,16 @@ def select_all():
         gym_classes.append(gym_class)
     return gym_classes
 
+def select(id):
+    gym_class = None
+    sql = "SELECT * FROM gym_classes WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        gym_class = Gym_class(result['name'], result['id'])
+    return gym_class
+
 def delete_all():
     sql = "DELETE FROM gym_classes"
     run_sql(sql)
