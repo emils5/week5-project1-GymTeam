@@ -9,7 +9,7 @@ CREATE TABLE members (
 
 CREATE TABLE gym_classes (
     id SERIAL PRIMARY KEY,
-    class_name VARCHAR(255)
+    name VARCHAR(255)
 );
 
 CREATE TABLE bookings (

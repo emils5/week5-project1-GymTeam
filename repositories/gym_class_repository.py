@@ -19,3 +19,7 @@ def select_all():
         gym_class = Gym_class(row['name'], row['id'])
         gym_classes.append(gym_class)
     return gym_classes
+
+def delete_all():
+    sql = "DELETE FROM gym_classes"
+    run_sql(sql)

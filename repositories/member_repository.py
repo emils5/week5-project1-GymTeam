@@ -20,6 +20,9 @@ def select_all():
         members.append(member)
     return members
 
+def delete_all():
+    sql = "DELETE FROM members"
+    run_sql(sql)
 
 
 

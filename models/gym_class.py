@@ -1,5 +1,5 @@
 class Gym_class:
 
-    def __init__(self, class_name, id = None): 
-        self.class_name = class_name
+    def __init__(self, name, id = None): 
+        self.name = name
         self.id = id

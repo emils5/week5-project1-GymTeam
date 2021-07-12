@@ -1,5 +1,5 @@
 class Member:
 
     def __init__(self, name, id = None):
-        self.name
-        self.id
+        self.name = name
+        self.id = id
