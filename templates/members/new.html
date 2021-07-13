@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add a New Member</h1>
+
+<form action="/members" method="post">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name">
+   
+    <input class="btn btn--action" type='submit' value="Add New Member">
+
+</form>
+
+{% endblock %}

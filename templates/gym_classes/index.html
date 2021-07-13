@@ -3,6 +3,10 @@
 {% block content %}
 <h1>Gym Classes</h1>
 
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/gym_classes/new">Add New Class</a>
+</p>
+
 <table>
   <tr>
     <th>Name</th>
@@ -11,6 +15,16 @@
   {% for gym_class in gym_classes %}
   <tr>
     <td><a href="/gym_classes/{{ gym_class.id }}"> {{gym_class.name}} </a></td>
+    <td>
+      <form action="/gym_classes/{{ gym_class.id }}/edit">
+        <input class="btn btn--danger" type="submit" value="Edit" />
+      </form>
+    </td>
+    <td>
+      <form action="/gym_classes/{{ gym_class.id }}/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="Delete" />
+      </form>
+    </td>
   </tr>
   {% endfor %}
 </table>

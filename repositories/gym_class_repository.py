@@ -41,6 +41,10 @@ def members(gym_class):
         members.append(member)
     return members
 
+def update(gym_class):
+    sql = "UPDATE gym_classes SET name = %s WHERE id = %s"
+    values = [gym_class.name, gym_class.id]
+    run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM gym_classes"
