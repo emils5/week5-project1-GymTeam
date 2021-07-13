@@ -30,6 +30,24 @@ def select(id):
         member = Member(result['name'], result['id'])
     return member
 
+def gym_classes(member):
+    gym_classes = []
+
+    sql = "SELECT gym_classes.* FROM gym_classes INNER JOIN bookings ON bookings.gym_class_id = gym_classes.id WHERE member_id = %s"
+    values = [member.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        gym_class = Gym_class(row['name'], row['id'])
+        gym_classes.append(gym_class)
+    return gym_classes
+
+
+def delete(id):
+    sql = "DELETE FROM members WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
 def delete_all():
     sql = "DELETE FROM members"
     run_sql(sql)

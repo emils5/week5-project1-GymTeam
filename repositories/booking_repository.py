@@ -26,6 +26,18 @@ def select_all():
         bookings.append(booking)
     return bookings
 
+def gym_class(booking):
+    sql = "SELECT * FROM gym_classes WHERE id = %s"
+    values = [booking.gym_class.id]
+    results = run_sql[sql, values][0]
+    gym_class = Gym_class(results['name'], results['id'])
+    return gym_class
+
+def delete(id):
+    sql = "DELETE FROM bookings WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
 def delete_all():
     sql = "DELETE FROM bookings"
     run_sql(sql)

@@ -9,3 +9,16 @@ members_blueprint = Blueprint("members", __name__)
 def members():
     members = member_repository.select_all()
     return render_template("members/index.html", members = members)
+
+@members_blueprint.route("/members/<id>", methods = ['GET'])
+def show_members(id):
+    member = member_repository.select(id)
+    gym_classes = member_repository.gym_classes(member)
+    return render_template("members/show.html", member = member, gym_classes = gym_classes)
+
+@members_blueprint.route("/members/<id>/delete", methods=['POST'])
+def delete_member(id):
+    member_repository.delete(id)
+    return redirect('/members')
+
+
