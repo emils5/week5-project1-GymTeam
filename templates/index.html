@@ -1,7 +1,17 @@
 {% extends 'base.html'%}
 
 {% block content %}
+
 <h1>GymTeam</h1>
 
-<p>Manage your Gym</p>
+    <p>Manage your Gym</p>
+
+<div id="main-menu">
+    
+    <nav>
+      <a href="/gym_classes/new"><button>Create New Gym Class</button></a>
+      <a href="/members/new"><button >Create New Member</button></a>
+      <a href="/bookings/new"><button>Create New Booking</button></a>
+    </nav>
+  </div>
 {% endblock %}
