@@ -7,19 +7,28 @@
   <a class="btn btn--action" href="/bookings/new">New booking</a>
 </p>
 
-<ul>
+<table> 
+  <tr>
+   <th>Member Name</th>
+   <th>Class</th>
+  </tr>
+  <tr>
   {% for booking in bookings %}
-  <li>
-  <p>{{ booking.member.name }} - {{ booking.gym_class.name }} </p>
+   <tr>
+   <td>{{ booking.member.name }}</td>
+   <td>{{ booking.gym_class.name }}</td> 
+   <td> 
+     <form action="/bookings/{{ booking.id }}/delete" method="POST">
+    <input class="btn btn--danger" type="submit" value="delete" />
+    </form> 
+  </td>
   
-    <p>
-      <form action="/bookings/{{ booking.id }}/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="delete" />
-      </form>
-    </p>
-  </li>
+    
+      
+   
+  </tr>
   {% endfor %}
-</ul>
+</table>
 
 
 {% endblock %}
