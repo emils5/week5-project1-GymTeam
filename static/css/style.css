@@ -1,4 +1,6 @@
 body {
+    display: flex;
+    flex-direction: column;
     background-color: lightblue;
     background-size: cover;
     background-repeat: no-repeat;
@@ -144,12 +146,12 @@ main {
     border-collapse: collapse;
   }
 
-  body > footer {
+  /* body > footer {
     background-color: rgb(11, 60, 109);
+    flex-shrink: 0;
   }
   
   body > footer > p {
-    padding: 6px;
     text-align: center;
     color: rgb(235, 232, 204);
-  }
+  } */
