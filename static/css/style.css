@@ -1,3 +1,14 @@
+body {
+    background-color: lightblue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+  }
+
 #logo {
     width: 16%;
     padding: 10px 10px 10px 0px;
@@ -5,17 +16,16 @@
 
 header {
     display: flex;
-    justify-content: flex-start;
-    border: 1px solid black;
-    background-color: white;
+    justify-content: space-around;
+    padding: auto;
+    border: 1px solid black; 
+    /* background-color: white; */
   }
 
 header nav{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding-right: 100%;
+    align-items: center; 
   }
 
 header nav button, input[type=submit] {
@@ -32,15 +42,7 @@ header nav button, input[type=submit] {
     border-radius: 4px;
   }
 
-body {
-    background-color: lightblue;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
-    margin: 10px;
-  }
+
 
 main {
     display: flex;
@@ -140,4 +142,14 @@ main {
   
   table {
     border-collapse: collapse;
+  }
+
+  body > footer {
+    background-color: rgb(11, 60, 109);
+  }
+  
+  body > footer > p {
+    padding: 6px;
+    text-align: center;
+    color: rgb(235, 232, 204);
   }
